@@ -49,7 +49,7 @@ function startTimer(timerdisplay){
         }else{
             const minutes= Math.floor(timeRemaining/60000);
             const seconds= ((timeRemaining%60000)/1000).toFixed(0);
-            const formattedTime= `${minutes}:${seconds}.toString().padStart(2, '0')}`;
+            const formattedTime= `${minutes}:${seconds}`.toString().padStart(2, '0');
             timerdisplay.textContent=formattedTime;
         }
     },1000);
