@@ -1,6 +1,7 @@
-let pomodoro= document.getElementById("Pomodoro-timer");
-let short=document.getElementById("short");
-let long= document.getElementById("long");
+let pomodoro= document.getElementById("pomodoro-timer");
+let short=document.getElementById("short-timer");
+let long= document.getElementById("long-timer");
+let currentTimer = null;
 
 function showDefaultTimer(){
     pomodoro.style.display= "block";
@@ -11,28 +12,24 @@ showDefaultTimer()
 
 function hideAll(){
     let timers=document.querySelectorAll(".timer-display");
-    timers.forEach(timer => timer.style.display="none")
+    timers.forEach((timer) => (timer.style.display="none"));
 }
-hideAll()
-
-let currentTimer = null;
-
 document.getElementById("pomodoro-session").addEventListener("click",function(){
     hideAll();
     pomodoro.style.display="block"
-    currentTimer= pomodoro
+    currentTimer= pomodoro;
 });
 
 document.getElementById("short-break").addEventListener("click",function(){
     hideAll();
     short.style.display="block"
-    currentTimer= short
+    currentTimer= short;
 });
 
 document.getElementById("long-break").addEventListener("click",function(){
     hideAll();
     long.style.display="block"
-    currentTimer= long
+    currentTimer= long;
 });
 
 let myInterval = null;
@@ -58,8 +55,20 @@ function startTimer(timerdisplay){
     },1000);
 }
 
-docu
+document.getElementById("start").addEventListener("click",function(){
+    if( currentTimer){
+        startTimer(currentTimer);
+        document.getElementById("timer-message").style.display="none";
+    } else{
+        document.getElementById("timer-message").style.display="block";
+    }
+});
 
+document.getElementById("stop").addEventListener("click",function(){
+    if(currentTimer){
+        clearInterval(myInterval);
+    }
+});
 
 
 
