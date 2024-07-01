@@ -1,78 +1,151 @@
-*{
-    margin: 0;
-    padding: 0%;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #749983, #897595);
+}
+.container {
+  text-align: center;
+  padding: 10px 0;
+  width: 600px;
+  box-sizing: border-box;
+}
+.timer {
+  display: inline-block;
+  padding: 10px;
+  width: 600px;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: 3rem;
+  width: auto;
+  margin: 20px auto;
+}
+.timer-display {
+  font-size: 40px;
+}
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.button {
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #897595;
+}
+#buttons {
+  margin-top: 20px;
+}
+#start,
+#stop {
+  background-color: #749983;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+#stop:hover {
+  background-color: #897595;
+}
+#start:hover {
+  background-color: #897595;
+}
 
+#timer-message {
+  color: white;
+  display: none;
+  padding: 0.5em;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 1em;
 }
-body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(120deg,#749983, #897595)    
-}
-.container{
-    text-align: center;
-    padding: 10px 0;
-    width:600px;
-    box-sizing: border-box;
-}
-.timer{
-    display: inline-block;
-    padding:10px;
-    width: 600px;
-    box-sizing: border-box;
-}
-h1{
-    font-family: 3rem;
-    width: auto;
-    margin: 20px auto;
-}
-.timer-display{
-    font-size: 40px;
-}
-.button-container{
+@media screen and (max-device-width: 480px) {
+  .button-container {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-}
-.button{
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-}
-.button:hover{
-    background-color: #897595;
-}
-#buttons{
+  }
+  #buttons {
     margin-top: 20px;
-}
-#start,
-#stop{
+    display: flex;
+    justify-content: center;
+  }
+  #start,
+  #stop {
     background-color: #749983;
-    color:#fff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
-}
-#stop:hover{
+  }
+  #stop:hover {
     background-color: #897595;
-}
-#start:hover{
+  }
+  #start:hover {
     background-color: #897595;
-}
-
-#timer-message{
+  }
+  #timer-message {
     color: white;
     display: none;
-    padding: .5em;
+    padding: 0.5em;
     font-size: 1em;
     text-align: center;
     border-radius: 1em;
+  }
+  #timer {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+  }
+  #timer-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  #timer-container #timer {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+  }
+  #timer-container #timer-message {
+    color: white;
+    display: none;
+    padding: 0.5em;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 1em;
+  }
+  #timer-container #timer-message.show {
+    display: block;
+  }
+  #timer-container #timer-message.hide {
+    display: none;
+  }
+  #timer-container #timer-message.hide #timer {
+    display: none;
+  }
+  #timer-container #timer-message.hide #timer-message {
+    display: block;
+  }
+  #timer-container #timer-message.hide #timer-message.show {
+    display: block;
+  }
+  #timer-container #timer-message.hide #timer-message.hide {
+    display: none;
+  }
 }
-
-
-
